@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Workspace
+   version = "1.0">
+   <Group
+      location = "group:/Users/zhi.zhuang/Documents/qiye/github/iOSTool/iOSTool/KVO"
+      name = "KVO">
+      <FileRef
+         location = "group:KVO.h">
+      </FileRef>
+      <FileRef
+         location = "group:KVO.m">
+      </FileRef>
+   </Group>
+   <FileRef
+      location = "self:">
+   </FileRef>
+</Workspace>
