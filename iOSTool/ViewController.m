@@ -8,27 +8,35 @@
 
 #import "ViewController.h"
 #import "UserModel.h"
+#import "PlayerModel.h"
 
 @interface ViewController ()
 
 @end
 
 @implementation ViewController{
-    UserModel *  userModel;
+    UserModel   *  userModel;
+    PlayerModel *  playerModel;
 }
 
 - (void)viewDidLoad {
     [super viewDidLoad];
     
-    userModel = [UserModel new];
-    userModel.b = @"aaa";
-    [userModel kvo_addObserver:self forKeyPath:@"b" options:NSKeyValueObservingOptionNew context:nil];
-    userModel.b = @"dsdsdsds";
+//    userModel = [UserModel new];
+//    userModel.b = @"ha";
+//    [userModel kvo_addObserver:self forKeyPath:@"b" options:NSKeyValueObservingOptionNew context:nil];
+//    userModel.b = @"hello";
+    
+    playerModel = [PlayerModel new];
+    [playerModel block_addObserver:self forKeyPath:@"name" block:^(id newValue, id oldValue) {
+        NSLog(@"change:%@",newValue);
+    }];
+    playerModel.name = @"fuck,,,";
 }
 
--(void)observeValueForKeyPath:(NSString *)keyPath ofObject:(id)object change:(NSDictionary<NSKeyValueChangeKey,id> *)change context:(void *)context{
-    NSLog(@"observeValueForKeyPath:%@",keyPath);
-}
+//-(void)observeValueForKeyPath:(NSString *)keyPath ofObject:(id)object change:(NSDictionary<NSKeyValueChangeKey,id> *)change context:(void *)context{
+//    NSLog(@"observeValueForKeyPath:%@",keyPath);
+//}
 
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];

@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		014CD922213E938B009C0F08 /* NSObject+KVO_Block.m in Sources */ = {isa = PBXBuildFile; fileRef = 014CD921213E938B009C0F08 /* NSObject+KVO_Block.m */; };
+		014CDA3321428FD8009C0F08 /* PlayerModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 014CDA3221428FD7009C0F08 /* PlayerModel.m */; };
 		01BA6444212EA38B004624EA /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 01BA6443212EA38B004624EA /* AppDelegate.m */; };
 		01BA6447212EA38B004624EA /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 01BA6446212EA38B004624EA /* ViewController.m */; };
 		01BA644A212EA38B004624EA /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 01BA6448212EA38B004624EA /* Main.storyboard */; };
@@ -18,6 +20,10 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		014CD920213E938B009C0F08 /* NSObject+KVO_Block.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "NSObject+KVO_Block.h"; sourceTree = "<group>"; };
+		014CD921213E938B009C0F08 /* NSObject+KVO_Block.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "NSObject+KVO_Block.m"; sourceTree = "<group>"; };
+		014CDA3121428FD7009C0F08 /* PlayerModel.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = PlayerModel.h; sourceTree = "<group>"; };
+		014CDA3221428FD7009C0F08 /* PlayerModel.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = PlayerModel.m; sourceTree = "<group>"; };
 		01BA643F212EA38B004624EA /* iOSTool.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = iOSTool.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		01BA6442212EA38B004624EA /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		01BA6443212EA38B004624EA /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
@@ -76,6 +82,8 @@
 				01BA6451212EA38B004624EA /* main.m */,
 				01BA6460212EB0CF004624EA /* UserModel.h */,
 				01BA6461212EB0CF004624EA /* UserModel.m */,
+				014CDA3121428FD7009C0F08 /* PlayerModel.h */,
+				014CDA3221428FD7009C0F08 /* PlayerModel.m */,
 			);
 			path = iOSTool;
 			sourceTree = "<group>";
@@ -85,6 +93,8 @@
 			children = (
 				01BA645D212EA80E004624EA /* NSObject+KVO.h */,
 				01BA645E212EA80E004624EA /* NSObject+KVO.m */,
+				014CD920213E938B009C0F08 /* NSObject+KVO_Block.h */,
+				014CD921213E938B009C0F08 /* NSObject+KVO_Block.m */,
 			);
 			name = KVO;
 			path = /Users/zhi.zhuang/Documents/qiye/github/iOSTool/iOSTool/KVO;
@@ -162,9 +172,11 @@
 			buildActionMask = 2147483647;
 			files = (
 				01BA645F212EA80E004624EA /* NSObject+KVO.m in Sources */,
+				014CDA3321428FD8009C0F08 /* PlayerModel.m in Sources */,
 				01BA6462212EB0CF004624EA /* UserModel.m in Sources */,
 				01BA6447212EA38B004624EA /* ViewController.m in Sources */,
 				01BA6452212EA38B004624EA /* main.m in Sources */,
+				014CD922213E938B009C0F08 /* NSObject+KVO_Block.m in Sources */,
 				01BA6444212EA38B004624EA /* AppDelegate.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

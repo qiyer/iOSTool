@@ -15,7 +15,12 @@
 {
     NSString * className      = NSStringFromClass([self class]);
     NSString * childClassName = [@"KVO_" stringByAppendingString:className];
-    Class      childClass     = objc_allocateClassPair([self class], childClassName.UTF8String, 0);
+    Class      childClass     = objc_getClass(childClassName.UTF8String);
+    
+    if(!childClass){
+        childClass = objc_allocateClassPair([self class], childClassName.UTF8String, 0);
+        objc_registerClassPair(childClass);
+    }
     //这里严谨一点判断一下 首字符 是不是 字母
     NSString * headChar       = [keyPath substringToIndex:1];
     NSString * setKeyPath     = [headChar.uppercaseString stringByAppendingString:[keyPath substringFromIndex:1]];
@@ -25,17 +30,16 @@
     const char *types         = method_getTypeEncoding(clazzMethod);
     
     class_addMethod(childClass, NSSelectorFromString(selectorName), (IMP)setKVOvalue, types);
-    objc_registerClassPair(childClass);
-    
     object_setClass(self, childClass);
-    objc_setAssociatedObject(self, (__bridge const void*)@"Retained_object", observer, OBJC_ASSOCIATION_RETAIN);
     
+    objc_setAssociatedObject(self, (__bridge const void*)@"Retained_object", observer, OBJC_ASSOCIATION_RETAIN);
     objc_setAssociatedObject(self, (__bridge const void*)@"KVO_setter", selectorName, OBJC_ASSOCIATION_COPY_NONATOMIC);
     objc_setAssociatedObject(self, (__bridge const void*)@"KVO_getter", keyPath, OBJC_ASSOCIATION_COPY_NONATOMIC);
     
 }
 
-void setKVOvalue(id _self,SEL sel,id newValue){
+void setKVOvalue(id _self,SEL sel,id newValue)
+{
     Class curClass = [_self class];
     object_setClass(_self, class_getSuperclass(curClass));
     

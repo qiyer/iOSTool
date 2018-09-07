@@ -8,6 +8,7 @@
 
 #import <Foundation/Foundation.h>
 #import "NSObject+KVO.h"
+#import "NSObject+KVO_Block.h"
 
 @interface UserModel : NSObject
 
